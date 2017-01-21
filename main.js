@@ -81,6 +81,8 @@ function loop() {
 	var now = Date.now();
 	var delta = now - then;
 
+	console.log("hello");
+
 	update(delta / 1000);
 	draw();
 	
