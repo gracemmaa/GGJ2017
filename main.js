@@ -62,17 +62,17 @@ function init() {
 
 function update(dt) {
 	if(player.y + player.height < canvas.height) {
-		player.dy += 30 * dt;
+		player.dy += 10 * dt;
 	} else {
 		player.y = canvas.height - player.height;
 		player.dy = 0;
 		player.grounded = true;
 	}
 	
-	var left = 37 in keysDown;
-	var right = 39 in keysDown;
-	var up = 38 in keysDown;
-	var down = 40 in keysDown;
+	var left = (37 in keysDown) || (65 in keysDown);
+	var right = (39 in keysDown) || (68 in keysDown);
+	var up = (38 in keysDown) || (87 in keysDown);
+	var down = (40 in keysDown) || (83 in keysDown);
 	
 	if(player.grounded && up) {
 		player.dy = -10;
